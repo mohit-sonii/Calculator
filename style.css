@@ -1,25 +1,125 @@
-
-.button{
-     width:80px;
-     height:40px;
-
+html {
+     font-size: 62.5%;
 }
-.row{
+
+body {
      display: flex;
-     gap:10px;
+     justify-content: center;
+     align-items: center;
+     height: 100vh;
+     box-sizing: border-box;
+     background-color: rgb(95, 94, 94);
 }
-.calculator{
+
+/* .toggle {
+     transition: all 0.5s ease-in-out;
+} */
+
+.button {
+     width: 5.4rem;
+     border-radius: 1rem;
+     box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.25) inset;
+     height: 5.4rem;
+     outline: none;
+     /* transition: all 0.5s ease-in; */
+     font-size: 1.8rem;
+     font-weight: 600;
+     /* background-color: white; */
+     border: none;
+     /* transition: 0.2 all; */
+}
+
+.hidden {
+      /* width:4rem;
+     height: 4rem;  */
+     display: none;
+     /* transition: all 0.8s ease-out; */
+}
+
+.button:active {
+     transform: scale(0.9);
+     /* In this case, the button is scaled down to 90% of its original size when it is clicked. This creates a visual feedback, making it appear as if the button is pressed.*/
+     filter: drop-shadow(15px 10px 0px rgba(241, 240, 240, 0.25) inset);
+}
+
+.row {
      display: flex;
-     width: max-content;
+     justify-content: space-between;
+     align-items: center;
+     flex-direction: row;
+     gap: 1rem;
+}
+
+
+.container {
+     display: flex;
+     gap: 1rem;
+     justify-content: space-between;
+     /* transition: all 0.3s ease-in; */
      flex-direction: column;
-     gap:10px;
+     transition: all 5s ease-in-out; 
 }
-.input{
-     width:100%;
-     height:30px;
-     border: 1px solid;
-     font-size: 18px;
-     border-radius: 10px;;
-     padding:10px;
 
+.calculator {
+     display: flex;
+     background-color: #202020;
+     border-radius: 15px;
+     /* width: 40rem;*/
+     /* height:45rem;  */
+     /* transition: all 0.8s ease; */
+     box-sizing: border-box;
+     padding: 2rem 3rem;
+     /* justify-content: center;
+     align-items: center; */
+     /* height: max-content; */
+     /* width: 39rem; */
+     flex-direction: column;
+     gap: 1rem;
+}
+
+.input {
+     width: 100%;
+     height: 6rem;
+     /* pointer-events: none; */
+     /* border: 2px solid #F9C91E; */
+     font-size: 2rem;
+     outline: none;
+     color: white;
+     background-color: #202020;
+     white-space: nowrap;
+     /* direction: rtl; */
+     text-align: right;
+     font-weight: 800;
+     border-radius: 10px;
+     padding: 1rem;
+}
+
+#equal {
+     background-color: #76B9ED;
+     flex-grow: 1;
+     color: #202020
+}
+
+.col-3b {
+     background-color: #3b3b3b;
+     color: white;
+}
+
+.col-3b:hover {
+     background-color: #1a1919;
+     transition: all 0.2s ease-in-out;
+}
+
+.col-32,
+.scientific,
+.toggle {
+     background-color: #1a1919;
+     color: white;
+}
+
+.col-32:hover,
+.scientific:hover,
+.toggle:hover {
+     background-color: #3b3b3b;
+     transition: all 0.2s ease-in-out;
 }

@@ -4,7 +4,11 @@
 <head>
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+          integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
      <title>Calculator</title>
+     <link rel="shortcut icon" href="assets/fav-icon.png" type="image/x-icon">
      <script src="script.js" defer></script>
      <link rel="stylesheet" href="style.css">
 
@@ -16,38 +20,72 @@
           <div class="row">
                <input type="text" class="input" />
           </div>
-          <div class="row">
-               <button class="button">AC</button>
-               <button class="button">%</button>
-               <button class="button">M+</button>
-               <button class="button">M-</button>
-          </div>
-          <div class="row">
-               <button class="button" id="seven">7</button>
-               <button class="button" id="eight">8</button>
-               <button class="button" id="nine">9</button>
-               <button class="button" id="mul">*</button>
-          </div>
-          <div class="row">
-               <button class="button" id="four">4</button>
-               <button class="button" id="five">5</button>
-               <button class="button" id="six">6</button>
-               <button class="button" id="min">-</button>
-          </div>
-          <div class="row">
-               <button class="button" id="one">1</button>
-               <button class="button" id="two">2</button>
-               <button class="button" id="three">3</button>
-               <button class="button" id="plus">+</button>
-          </div>
-          <div class="row">
-               <button class="button" id="zero">0</button>
-               <button class="button" id="dot">.</button>
-               <button class="button" id="equal">=</button>
-               <button class="button" id="div">/</button>
+          <div class="container">
+               <div class="row">
+                    <button class="toggle hidden button" id="e" title="e = 2.71828 ">e</button>
+                    <button class="toggle hidden button" id="log" style="font-style:italic;" title="log with base 10">log</button>
+                    <button class="toggle hidden button"id="fact" style = "font-style: italic;" title="Factorial i.e. 5! = 5x4x3x2x1 = 120">n!</button>
+                    <button class="toggle hidden button" id="sin" title="trigonometric">sin</button>
+                    <button class="toggle hidden button" id="cos" title="trigonometric">cos</button>
+                    <button class="toggle hidden button"id ="tan"title="trigonometric">tan</button>
+                    <button class="toggle hidden button" id="one-x" style = "font-style: italic;" title = "Divide x number with numerator 1">1<sub>/ x</sub></button>
+               </div>
+               <div class="row">
+                    <button class="toggle hidden button" id="abs" title="absolutevalue i.e. result will be in +ve">
+                         | x |
+                    </button>
+                    <button class="button scientific col-3b"><i class="fa-solid fa-flask"></i></button>
+                    <button class="button col-3b operate" title="clear input field">AC</button>
+                    <button class="button col-32 operate" id="percent" title="Provides the remainder after division"><i class="fa-solid fa-percent"></i></button>
+                    <button class="button col-32 operate" id="div"><i class="fa-solid fa-divide"></i></button>
+                    <button class="button col-32 operate" id="backspace"><i
+                              class="fa-solid fa-delete-left"></i></button>
+                    <button title="square of a number" class="toggle hidden button"id="square" style="font-style: italic;">x<sup style="margin-left: 3px; font-style: italic;">2</sup></button>
+               </div>
+               <div class="row">
+                    <button title="cubic root" class="toggle hidden button" id="cubic"><sup>3</sup><i
+                              class="fa-solid fa-square-root-variable"></i></button>
+                    <button title="y number of multiplication of x" class="button col-32 operate" id="expo" style="font-style: italic;">x<sup
+                              style="margin-left:2px; font-weight: 500;">y</sup></button>
+                    <button class="button col-3b int" id="seven">7</button>
+                    <button class="button col-3b int" id="eight">8</button>
+                    <button class="button col-3b int" id="nine">9</button>
+                    <button class="button col-32 operate" id="mul">x</button>
+                    <button title="x number of multiplication of 2" class="toggle hidden button" id="two-x">2<sup style="font-style: italic; ">
+                         x
+                    </sup></button>
+               </div>
+               <div class="row">
+                    <button class="toggle hidden button" title="pi = 3.14" id="pi">&pi;</button>
+                    <button class="button col-32 operate" title="square root" id="root"><i
+                              class="fa-solid fa-square-root-variable"></i></button>
+                    <button class="button col-3b int" id="four">4</button>
+                    <button class="button col-3b int" id="five">5</button>
+                    <button class="button col-3b int" id="six">6</button>
+                    <button class="button col-32 operate" id="minus"><i class="fa-solid fa-minus"></i></button>
+                    <button title="x number of multiplication of 10" class="toggle hidden button"id="tenX">10<sup
+                         style="font-style: italic; margin-left:2px">x</sup></button>
+               </div>
+               <div class="row">
+                    <button class="toggle hidden button" id="leftShift" title="Left shift operator"><<</button>
+                    <button class="button col-32 operate" id="bracket">)</button>
+                    <button class="button col-3b int" id="one">1</button>
+                    <button class="button col-3b int" id="two">2</button>
+                    <button class="button col-3b int" id="three">3</button>
+                    <button class="button col-32" id="plus"><i class="fa-solid fa-plus"></i></button>
+                    <button class="toggle hidden button" title="cube of a number" id="cube" style="font-style: italic;">x<sup style="margin-left:3px;">3</sup></button>
+               </div>
+               <div class="row">
+                    <button class="toggle hidden button" id="rightShift" title="Right shift operator">>></button>
+                    <button class="button col-32 operate" id="bracket">(</button>
+                    <button class="button col-3b int" id="dot">.</button>
+                    <button class="button col-3b int" id="zero">0</button>
+                    <button class="button col-32 operate" id="equal" >=</button>
+               </div>
           </div>
      </div>
 
+     <!-- <script src="script.js"></script> -->
 </body>
 
 </html>
