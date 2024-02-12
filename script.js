@@ -305,7 +305,6 @@ function isEqualTo() {
                let len = string.length
                let newStr = parseInt(string.slice(0, len - 1))
                factorial(newStr)
-
           }
           else if (string.includes('log')) {
                const log_num = parseFloat(string.slice(3))
