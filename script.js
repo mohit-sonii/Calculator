@@ -139,18 +139,18 @@ document.getElementById("rightShift").addEventListener('click', () => {
           ansDisplay.value = "Enter a number first"
           all_clear()
      }
-     else { 
+     else {
           operations('>>')
      }
 })
 
 //left shift listener
-document.getElementById("leftShift").addEventListener('click',()=>{
-     if(ansDisplay === ""){
+document.getElementById("leftShift").addEventListener('click', () => {
+     if (ansDisplay === "") {
           ansDisplay.value = "Enter a number first"
           all_clear()
      }
-     else{
+     else {
           operations('<<')
      }
 })
@@ -225,7 +225,7 @@ function operations(val) {
      return (ansDisplay.value = string);
 }
 
-let len = string.length
+
 function isEqualTo() {
      try {
           if (string.includes("^")) {
@@ -267,7 +267,7 @@ function isEqualTo() {
                ansDisplay.value = rightShift
                return ansDisplay
           }
-          else if(string.includes("<<")){
+          else if (string.includes("<<")) {
                let len = string.length - 1
                var right_another = ""
                var left_another = ""
@@ -301,11 +301,11 @@ function isEqualTo() {
                ansDisplay.value = fun
                return ansDisplay
           }
-          else if (string.endsWith('!')) {
-               let newStr = parseInt(string.slice(0, len))
-               const facRes = factorial(newStr)
-               ansDisplay.value = facRes
-               return ansDisplay
+          else if (string.includes('!')) {
+               let len = string.length
+               let newStr = parseInt(string.slice(0, len - 1))
+               factorial(newStr)
+
           }
           else if (string.includes('log')) {
                const log_num = parseFloat(string.slice(3))
@@ -319,7 +319,7 @@ function isEqualTo() {
                return ansDisplay;
           } else if (string.includes("√")) {
                let num = string.indexOf('√')
-               const root_number = parseFloat(string.substring(num+1));
+               const root_number = parseFloat(string.substring(num + 1));
                if (!isNaN(root_number)) {
                     const rt = Math.sqrt(root_number);
                     ansDisplay.value = rt;
@@ -373,13 +373,12 @@ function trigonometry(newStr) {
      return val
 }
 function factorial(number) {
-     if (number == 0 || number == 1) {
-          return 1;
+     let fact = 1
+     for (let i = 1; i <= number; i++) {
+          fact *= i
      }
-     else {
-          return number * factorial(number - 1)
-     }
-
+     ansDisplay.value = fact
+     return ansDisplay
 }
 function del() {
      string = string.slice(0, -1);
@@ -441,7 +440,7 @@ scientific.addEventListener("click", () => {
                Array.from(buttons).forEach((button) => {
                     button.style.width = "4rem";
                     button.style.height = "4rem";
-                    button.style.fontSize =   "1.2rem";
+                    button.style.fontSize = "1.2rem";
                     button.style.borderRadius = ".5rem"
                });
                sci.style.backgroundColor = "#76B9ED"
